@@ -1,0 +1,802 @@
+{
+  "suppliers": [
+    {
+      "id": "prov-001",
+      "name": "Distribuidora Central",
+      "leadTimeDays": 3
+    },
+    {
+      "id": "prov-002",
+      "name": "Alimentos del Valle",
+      "leadTimeDays": 5
+    },
+    {
+      "id": "prov-003",
+      "name": "Comercializadora Norte",
+      "leadTimeDays": 4
+    },
+    {
+      "id": "prov-004",
+      "name": "Limpieza Integral",
+      "leadTimeDays": 2
+    }
+  ],
+  "products": [
+    {
+      "id": "P-1001",
+      "name": "Café molido 500 g",
+      "category": "Abarrotes",
+      "stock": 82,
+      "minimumStock": 12,
+      "unitCost": 86.5,
+      "supplierId": "prov-001",
+      "salesHistory": [
+        5,
+        6,
+        4,
+        7,
+        5,
+        8,
+        6,
+        5,
+        7,
+        6,
+        4,
+        7,
+        6,
+        5
+      ]
+    },
+    {
+      "id": "P-1002",
+      "name": "Leche entera 1 L",
+      "category": "Lácteos",
+      "stock": 72,
+      "minimumStock": 18,
+      "unitCost": 24,
+      "supplierId": "prov-002",
+      "salesHistory": [
+        7,
+        8,
+        6,
+        9,
+        8,
+        7,
+        10,
+        8,
+        9,
+        7,
+        8,
+        10,
+        7,
+        9
+      ]
+    },
+    {
+      "id": "P-1003",
+      "name": "Arroz integral 1 kg",
+      "category": "Abarrotes",
+      "stock": 14,
+      "minimumStock": 10,
+      "unitCost": 32.5,
+      "supplierId": "prov-001",
+      "salesHistory": [
+        3,
+        4,
+        4,
+        5,
+        3,
+        6,
+        4,
+        5,
+        3,
+        4,
+        6,
+        4,
+        5,
+        3
+      ]
+    },
+    {
+      "id": "P-1004",
+      "name": "Jabón líquido 750 ml",
+      "category": "Limpieza",
+      "stock": 169,
+      "minimumStock": 8,
+      "unitCost": 48,
+      "supplierId": "prov-004",
+      "salesHistory": [
+        2,
+        2,
+        3,
+        1,
+        3,
+        2,
+        4,
+        2,
+        3,
+        2,
+        2,
+        3,
+        1,
+        4
+      ]
+    },
+    {
+      "id": "P-1005",
+      "name": "Aceite de oliva 500 ml",
+      "category": "Abarrotes",
+      "stock": 58,
+      "minimumStock": 8,
+      "unitCost": 118,
+      "supplierId": "prov-003",
+      "salesHistory": [
+        4,
+        3,
+        5,
+        4,
+        5,
+        6,
+        4,
+        5,
+        3,
+        6,
+        5,
+        4,
+        6,
+        5
+      ]
+    },
+    {
+      "id": "P-1006",
+      "name": "Yogur natural 1 kg",
+      "category": "Lácteos",
+      "stock": 28,
+      "minimumStock": 10,
+      "unitCost": 56,
+      "supplierId": "prov-002",
+      "salesHistory": [
+        3,
+        4,
+        3,
+        5,
+        4,
+        3,
+        4,
+        5,
+        3,
+        4,
+        6,
+        3,
+        5,
+        4
+      ]
+    },
+    {
+      "id": "P-1007",
+      "name": "Papel higiénico 12 pzas",
+      "category": "Hogar",
+      "stock": 18,
+      "minimumStock": 9,
+      "unitCost": 92,
+      "supplierId": "prov-003",
+      "salesHistory": [
+        3,
+        4,
+        5,
+        3,
+        5,
+        4,
+        6,
+        4,
+        3,
+        5,
+        4,
+        6,
+        4,
+        5
+      ]
+    },
+    {
+      "id": "P-1008",
+      "name": "Detergente en polvo 2 kg",
+      "category": "Limpieza",
+      "stock": 46,
+      "minimumStock": 12,
+      "unitCost": 74.5,
+      "supplierId": "prov-004",
+      "salesHistory": [
+        4,
+        3,
+        5,
+        4,
+        3,
+        4,
+        5,
+        3,
+        6,
+        4,
+        5,
+        3,
+        4,
+        5
+      ]
+    }
+  ],
+  "transactions": [
+    {
+      "id": "MOV-1795544401365-41",
+      "date": "2026-11-24T18:20:01.365Z",
+      "type": "Entrada",
+      "productId": "P-1001",
+      "productName": "Café molido 500 g",
+      "quantity": 74,
+      "user": "Samuel Vilchez",
+      "note": "Ajuste de existencias"
+    },
+    {
+      "id": "MOV-1795544396566-40",
+      "date": "2026-11-24T18:19:56.566Z",
+      "type": "Entrada",
+      "productId": "P-1005",
+      "productName": "Aceite de oliva 500 ml",
+      "quantity": 53,
+      "user": "Samuel Vilchez",
+      "note": "Ajuste de existencias"
+    },
+    {
+      "id": "MOV-1795544356648-39",
+      "date": "2026-11-24T18:19:16.648Z",
+      "type": "Entrada",
+      "productId": "P-1006",
+      "productName": "Yogur natural 1 kg",
+      "quantity": 26,
+      "user": "Samuel Vilchez",
+      "note": "Ajuste de existencias"
+    },
+    {
+      "id": "MOV-1795544351771-38",
+      "date": "2026-11-24T18:19:11.771Z",
+      "type": "Entrada",
+      "productId": "P-1004",
+      "productName": "Jabón líquido 750 ml",
+      "quantity": 168,
+      "user": "Samuel Vilchez",
+      "note": "Ajuste de existencias"
+    },
+    {
+      "id": "MOV-1795544124882-37",
+      "date": "2026-11-24T18:15:24.882Z",
+      "type": "Entrada",
+      "productId": "P-1008",
+      "productName": "Detergente en polvo 2 kg",
+      "quantity": 42,
+      "user": "Samuel Vilchez",
+      "note": "Ajuste de existencias"
+    },
+    {
+      "id": "MOV-1795544030305-36",
+      "date": "2026-11-24T18:13:50.305Z",
+      "type": "Entrada",
+      "productId": "P-1003",
+      "productName": "Arroz integral 1 kg",
+      "quantity": 13,
+      "user": "Samuel Vilchez",
+      "note": "Ajuste de existencias"
+    },
+    {
+      "id": "MOV-1795544025857-35",
+      "date": "2026-11-24T18:13:45.857Z",
+      "type": "Entrada",
+      "productId": "P-1007",
+      "productName": "Papel higiénico 12 pzas",
+      "quantity": 17,
+      "user": "Samuel Vilchez",
+      "note": "Ajuste de existencias"
+    },
+    {
+      "id": "MOV-1795544021043-34",
+      "date": "2026-11-24T18:13:41.043Z",
+      "type": "Entrada",
+      "productId": "P-1002",
+      "productName": "Leche entera 1 L",
+      "quantity": 65,
+      "user": "Samuel Vilchez",
+      "note": "Ajuste de existencias"
+    },
+    {
+      "id": "MOV-1795543272601-33",
+      "date": "2026-11-24T18:01:12.601Z",
+      "type": "Solicitud de reposición",
+      "productId": "P-1001",
+      "productName": "Café molido 500 g",
+      "quantity": 22,
+      "user": "Samuel Vilchez",
+      "note": "Solicitud opcional de relleno"
+    },
+    {
+      "id": "MOV-1795543271609-32",
+      "date": "2026-11-24T18:01:11.609Z",
+      "type": "Solicitud de reposición",
+      "productId": "P-1001",
+      "productName": "Café molido 500 g",
+      "quantity": 22,
+      "user": "Samuel Vilchez",
+      "note": "Solicitud opcional de relleno"
+    },
+    {
+      "id": "MOV-1795543234846-31",
+      "date": "2026-11-24T18:00:34.846Z",
+      "type": "Salida",
+      "productId": "P-1006",
+      "productName": "Yogur natural 1 kg",
+      "quantity": 12,
+      "user": "Samuel Vilchez",
+      "note": "Ajuste de existencias"
+    },
+    {
+      "id": "MOV-1795542548516-30",
+      "date": "2026-11-24T17:49:08.517Z",
+      "type": "Salida",
+      "productId": "P-1004",
+      "productName": "Jabón líquido 750 ml",
+      "quantity": 18,
+      "user": "Carlos Mendoza",
+      "note": "Ajuste de existencias"
+    },
+    {
+      "id": "MOV-1795542508632-29",
+      "date": "2026-11-24T17:48:28.632Z",
+      "type": "Solicitud de reposición",
+      "productId": "P-1001",
+      "productName": "Café molido 500 g",
+      "quantity": 4,
+      "user": "Carlos Mendoza",
+      "note": "Solicitud opcional de relleno"
+    },
+    {
+      "id": "MOV-1795542508475-28",
+      "date": "2026-11-24T17:48:28.475Z",
+      "type": "Solicitud de reposición",
+      "productId": "P-1001",
+      "productName": "Café molido 500 g",
+      "quantity": 4,
+      "user": "Carlos Mendoza",
+      "note": "Solicitud opcional de relleno"
+    },
+    {
+      "id": "MOV-1795542508240-27",
+      "date": "2026-11-24T17:48:28.240Z",
+      "type": "Solicitud de reposición",
+      "productId": "P-1001",
+      "productName": "Café molido 500 g",
+      "quantity": 4,
+      "user": "Carlos Mendoza",
+      "note": "Solicitud opcional de relleno"
+    },
+    {
+      "id": "MOV-1795542507976-26",
+      "date": "2026-11-24T17:48:27.976Z",
+      "type": "Solicitud de reposición",
+      "productId": "P-1001",
+      "productName": "Café molido 500 g",
+      "quantity": 4,
+      "user": "Carlos Mendoza",
+      "note": "Solicitud opcional de relleno"
+    },
+    {
+      "id": "MOV-1795542507368-25",
+      "date": "2026-11-24T17:48:27.368Z",
+      "type": "Solicitud de reposición",
+      "productId": "P-1001",
+      "productName": "Café molido 500 g",
+      "quantity": 4,
+      "user": "Carlos Mendoza",
+      "note": "Solicitud opcional de relleno"
+    },
+    {
+      "id": "MOV-1795542505969-24",
+      "date": "2026-11-24T17:48:25.969Z",
+      "type": "Solicitud de reposición",
+      "productId": "P-1001",
+      "productName": "Café molido 500 g",
+      "quantity": 4,
+      "user": "Carlos Mendoza",
+      "note": "Solicitud opcional de relleno"
+    },
+    {
+      "id": "MOV-1795542504401-23",
+      "date": "2026-11-24T17:48:24.401Z",
+      "type": "Solicitud de reposición",
+      "productId": "P-1001",
+      "productName": "Café molido 500 g",
+      "quantity": 4,
+      "user": "Carlos Mendoza",
+      "note": "Solicitud opcional de relleno"
+    },
+    {
+      "id": "MOV-1795541435106",
+      "date": "2026-11-24T17:30:35.106Z",
+      "type": "Salida",
+      "productId": "P-1002",
+      "productName": "Leche entera 1 L",
+      "quantity": 17,
+      "user": "Carlos Mendoza",
+      "note": "Ajuste de existencias"
+    },
+    {
+      "id": "MOV-1795541431298",
+      "date": "2026-11-24T17:30:31.298Z",
+      "type": "Salida",
+      "productId": "P-1008",
+      "productName": "Detergente en polvo 2 kg",
+      "quantity": 27,
+      "user": "Carlos Mendoza",
+      "note": "Ajuste de existencias"
+    },
+    {
+      "id": "MOV-1795541410840",
+      "date": "2026-11-24T17:30:10.840Z",
+      "type": "Salida",
+      "productId": "P-1007",
+      "productName": "Papel higiénico 12 pzas",
+      "quantity": 4,
+      "user": "Carlos Mendoza",
+      "note": "Ajuste de existencias"
+    },
+    {
+      "id": "MOV-1795541406384",
+      "date": "2026-11-24T17:30:06.384Z",
+      "type": "Salida",
+      "productId": "P-1003",
+      "productName": "Arroz integral 1 kg",
+      "quantity": 17,
+      "user": "Carlos Mendoza",
+      "note": "Ajuste de existencias"
+    },
+    {
+      "id": "MOV-1795540880934",
+      "date": "2026-11-24T17:21:20.934Z",
+      "type": "Entrada",
+      "productId": "P-1005",
+      "productName": "Aceite de oliva 500 ml",
+      "quantity": 1,
+      "user": "Carlos Mendoza",
+      "note": "Ajuste de existencias"
+    },
+    {
+      "id": "MOV-1795540871517",
+      "date": "2026-11-24T17:21:11.517Z",
+      "type": "Entrada",
+      "productId": "P-1005",
+      "productName": "Aceite de oliva 500 ml",
+      "quantity": 4,
+      "user": "Carlos Mendoza",
+      "note": "Ajuste de existencias"
+    },
+    {
+      "id": "MOV-1795540863237",
+      "date": "2026-11-24T17:21:03.237Z",
+      "type": "Salida",
+      "productId": "P-1005",
+      "productName": "Aceite de oliva 500 ml",
+      "quantity": 5,
+      "user": "Carlos Mendoza",
+      "note": "Ajuste de existencias"
+    },
+    {
+      "id": "MOV-1795540079330",
+      "date": "2026-11-24T17:07:59.330Z",
+      "type": "Pedido aprobado",
+      "productId": "P-1008",
+      "productName": "Detergente en polvo 2 kg",
+      "quantity": 7,
+      "user": "Samuel Vilchez",
+      "note": "Reposición · Limpieza Integral"
+    },
+    {
+      "id": "MOV-1795540078610",
+      "date": "2026-11-24T17:07:58.610Z",
+      "type": "Pedido aprobado",
+      "productId": "P-1004",
+      "productName": "Jabón líquido 750 ml",
+      "quantity": 3,
+      "user": "Samuel Vilchez",
+      "note": "Reposición · Limpieza Integral"
+    },
+    {
+      "id": "MOV-1795540077050",
+      "date": "2026-11-24T17:07:57.050Z",
+      "type": "Pedido aprobado",
+      "productId": "P-1006",
+      "productName": "Yogur natural 1 kg",
+      "quantity": 34,
+      "user": "Samuel Vilchez",
+      "note": "Reposición · Alimentos del Valle"
+    },
+    {
+      "id": "MOV-1795540075849",
+      "date": "2026-11-24T17:07:55.849Z",
+      "type": "Pedido aprobado",
+      "productId": "P-1002",
+      "productName": "Leche entera 1 L",
+      "quantity": 73,
+      "user": "Samuel Vilchez",
+      "note": "Reposición · Alimentos del Valle"
+    },
+    {
+      "id": "MOV-1795540072817",
+      "date": "2026-11-24T17:07:52.817Z",
+      "type": "Pedido aprobado",
+      "productId": "P-1007",
+      "productName": "Papel higiénico 12 pzas",
+      "quantity": 43,
+      "user": "Samuel Vilchez",
+      "note": "Reposición · Comercializadora Norte"
+    },
+    {
+      "id": "MOV-1795540071457",
+      "date": "2026-11-24T17:07:51.457Z",
+      "type": "Pedido aprobado",
+      "productId": "P-1003",
+      "productName": "Arroz integral 1 kg",
+      "quantity": 37,
+      "user": "Samuel Vilchez",
+      "note": "Reposición · Distribuidora Central"
+    },
+    {
+      "id": "MOV-1795540064792",
+      "date": "2026-11-24T17:07:44.792Z",
+      "type": "Pedido aprobado",
+      "productId": "P-1001",
+      "productName": "Café molido 500 g",
+      "quantity": 50,
+      "user": "Samuel Vilchez",
+      "note": "Reposición · Distribuidora Central"
+    },
+    {
+      "id": "MOV-1795540063249",
+      "date": "2026-11-24T17:07:43.249Z",
+      "type": "Pedido aprobado",
+      "productId": "P-1005",
+      "productName": "Aceite de oliva 500 ml",
+      "quantity": 49,
+      "user": "Samuel Vilchez",
+      "note": "Reposición · Comercializadora Norte"
+    },
+    {
+      "id": "MOV-2041",
+      "date": "2026-10-31T16:20:00",
+      "type": "Venta",
+      "productId": "P-1002",
+      "productName": "Leche entera 1 L",
+      "quantity": 2,
+      "user": "María López",
+      "note": "Venta de mostrador"
+    },
+    {
+      "id": "MOV-2040",
+      "date": "2026-10-31T14:05:00",
+      "type": "Entrada",
+      "productId": "P-1006",
+      "productName": "Yogur natural 1 kg",
+      "quantity": 12,
+      "user": "Samuel Vilchez",
+      "note": "Recepción de proveedor"
+    },
+    {
+      "id": "MOV-2039",
+      "date": "2026-10-30T12:42:00",
+      "type": "Venta",
+      "productId": "P-1001",
+      "productName": "Café molido 500 g",
+      "quantity": 1,
+      "user": "María López",
+      "note": "Venta de mostrador"
+    },
+    {
+      "id": "MOV-2038",
+      "date": "2026-10-29T10:15:00",
+      "type": "Salida",
+      "productId": "P-1003",
+      "productName": "Arroz integral 1 kg",
+      "quantity": 1,
+      "user": "Samuel Vilchez",
+      "note": "Producto dañado"
+    },
+    {
+      "id": "MOV-2037",
+      "date": "2026-10-28T17:30:00",
+      "type": "Venta",
+      "productId": "P-1005",
+      "productName": "Aceite de oliva 500 ml",
+      "quantity": 2,
+      "user": "María López",
+      "note": "Venta de mostrador"
+    },
+    {
+      "id": "MOV-2036",
+      "date": "2026-10-27T09:10:00",
+      "type": "Entrada",
+      "productId": "P-1008",
+      "productName": "Detergente en polvo 2 kg",
+      "quantity": 10,
+      "user": "Samuel Vilchez",
+      "note": "Recepción de proveedor"
+    },
+    {
+      "id": "MOV-2035",
+      "date": "2026-10-26T13:22:00",
+      "type": "Venta",
+      "productId": "P-1007",
+      "productName": "Papel higiénico 12 pzas",
+      "quantity": 1,
+      "user": "María López",
+      "note": "Venta de mostrador"
+    }
+  ],
+  "users": [
+    {
+      "id": "usr-001",
+      "username": "admin",
+      "password": "Admin123",
+      "name": "Samuel Vilchez",
+      "role": "Administrador",
+      "active": true
+    },
+    {
+      "id": "usr-002",
+      "username": "dependiente",
+      "password": "Venta123",
+      "name": "María López",
+      "role": "Dependiente",
+      "active": true
+    },
+    {
+      "id": "usr-003",
+      "username": "delegado",
+      "password": "Delegado123",
+      "name": "Carlos Mendoza",
+      "role": "Delegado",
+      "active": true
+    }
+  ],
+  "replenishments": [
+    {
+      "id": "REP-1795540063248",
+      "productId": "P-1005",
+      "quantity": 49,
+      "status": "Aprobado",
+      "date": "2026-11-24T17:07:43.248Z",
+      "user": "Samuel Vilchez"
+    },
+    {
+      "id": "REP-1795540064792",
+      "productId": "P-1001",
+      "quantity": 50,
+      "status": "Aprobado",
+      "date": "2026-11-24T17:07:44.792Z",
+      "user": "Samuel Vilchez"
+    },
+    {
+      "id": "REP-1795540071457",
+      "productId": "P-1003",
+      "quantity": 37,
+      "status": "Aprobado",
+      "date": "2026-11-24T17:07:51.457Z",
+      "user": "Samuel Vilchez"
+    },
+    {
+      "id": "REP-1795540072817",
+      "productId": "P-1007",
+      "quantity": 43,
+      "status": "Aprobado",
+      "date": "2026-11-24T17:07:52.817Z",
+      "user": "Samuel Vilchez"
+    },
+    {
+      "id": "REP-1795540075849",
+      "productId": "P-1002",
+      "quantity": 73,
+      "status": "Aprobado",
+      "date": "2026-11-24T17:07:55.849Z",
+      "user": "Samuel Vilchez"
+    },
+    {
+      "id": "REP-1795540077050",
+      "productId": "P-1006",
+      "quantity": 34,
+      "status": "Aprobado",
+      "date": "2026-11-24T17:07:57.050Z",
+      "user": "Samuel Vilchez"
+    },
+    {
+      "id": "REP-1795540078610",
+      "productId": "P-1004",
+      "quantity": 3,
+      "status": "Aprobado",
+      "date": "2026-11-24T17:07:58.610Z",
+      "user": "Samuel Vilchez"
+    },
+    {
+      "id": "REP-1795540079330",
+      "productId": "P-1008",
+      "quantity": 7,
+      "status": "Aprobado",
+      "date": "2026-11-24T17:07:59.330Z",
+      "user": "Samuel Vilchez"
+    },
+    {
+      "id": "SOL-1795542504400-9",
+      "productId": "P-1001",
+      "quantity": 4,
+      "status": "Solicitado",
+      "date": "2026-11-24T17:48:24.400Z",
+      "user": "Carlos Mendoza"
+    },
+    {
+      "id": "SOL-1795542505969-10",
+      "productId": "P-1001",
+      "quantity": 4,
+      "status": "Solicitado",
+      "date": "2026-11-24T17:48:25.969Z",
+      "user": "Carlos Mendoza"
+    },
+    {
+      "id": "SOL-1795542507368-11",
+      "productId": "P-1001",
+      "quantity": 4,
+      "status": "Solicitado",
+      "date": "2026-11-24T17:48:27.368Z",
+      "user": "Carlos Mendoza"
+    },
+    {
+      "id": "SOL-1795542507976-12",
+      "productId": "P-1001",
+      "quantity": 4,
+      "status": "Solicitado",
+      "date": "2026-11-24T17:48:27.976Z",
+      "user": "Carlos Mendoza"
+    },
+    {
+      "id": "SOL-1795542508240-13",
+      "productId": "P-1001",
+      "quantity": 4,
+      "status": "Solicitado",
+      "date": "2026-11-24T17:48:28.240Z",
+      "user": "Carlos Mendoza"
+    },
+    {
+      "id": "SOL-1795542508475-14",
+      "productId": "P-1001",
+      "quantity": 4,
+      "status": "Solicitado",
+      "date": "2026-11-24T17:48:28.475Z",
+      "user": "Carlos Mendoza"
+    },
+    {
+      "id": "SOL-1795542508632-15",
+      "productId": "P-1001",
+      "quantity": 4,
+      "status": "Solicitado",
+      "date": "2026-11-24T17:48:28.632Z",
+      "user": "Carlos Mendoza"
+    },
+    {
+      "id": "SOL-1795543271609-16",
+      "productId": "P-1001",
+      "quantity": 22,
+      "status": "Solicitado",
+      "date": "2026-11-24T18:01:11.609Z",
+      "user": "Samuel Vilchez"
+    },
+    {
+      "id": "SOL-1795543272601-17",
+      "productId": "P-1001",
+      "quantity": 22,
+      "status": "Solicitado",
+      "date": "2026-11-24T18:01:12.601Z",
+      "user": "Samuel Vilchez"
+    }
+  ]
+}

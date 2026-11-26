@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="theme-color" content="#101210">
+	<title>InvGest IA | Inventario inteligente</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="style.css">
+	<script src="app.js" defer></script>
+</head>
+<body>
+	<main id="login-screen" class="login-screen" hidden>
+		<section class="login-panel" aria-labelledby="login-title">
+			<a class="brand brand-login" href="#" aria-label="InvGest IA, inicio">
+				<span class="brand-mark">i</span><span>InvGest <b>IA</b></span>
+			</a>
+			<p class="eyebrow">CONTROL DE INVENTARIO</p>
+			<h1 id="login-title">Todo en su lugar.</h1>
+			<p class="login-copy">Inicia sesión para ver el estado de tu operación.</p>
+			<form id="login-form" class="form-stack">
+				<label>Usuario<input id="login-username" name="username" autocomplete="username" required placeholder="Tu usuario"></label>
+				<label>Contraseña<input id="login-password" name="password" type="password" autocomplete="current-password" required placeholder="Tu contraseña"></label>
+				<p id="login-error" class="form-error" role="alert" hidden></p>
+				<button class="button button-primary button-wide" type="submit">Entrar al sistema <span aria-hidden="true">↗</span></button>
+			</form>
+		</section>
+		<aside class="login-art" aria-label="Resumen de inventario">
+			<div class="art-topline"><span>INVESTIGACIÓN OPERATIVA</span><span>01 — 04</span></div>
+			<div class="art-orbit orbit-one"></div><div class="art-orbit orbit-two"></div>
+			<div class="art-copy"><span class="live-dot"></span> VISIBILIDAD EN TIEMPO REAL
+				<h2>Una operación<br>más inteligente.</h2>
+				<p>Inventario, demanda y reposición en una sola vista.</p>
+			</div>
+			<div class="art-foot"><span>INVGEST IA</span><span>V 1.0 / 2026</span></div>
+		</aside>
+	</main>
+
+	<div id="app-shell" class="app-shell" hidden>
+		<aside class="sidebar">
+			<a class="brand" href="#dashboard" aria-label="InvGest IA, panel general">
+				<span class="brand-mark">i</span><span>InvGest <b>IA</b></span>
+			</a>
+			<div class="workspace-label">ESPACIO DE TRABAJO</div>
+			<nav class="main-nav" aria-label="Navegación principal">
+				<button class="nav-link is-active" type="button" data-view="dashboard"><span class="nav-index">01</span> Panel general</button>
+				<button class="nav-link" type="button" data-view="inventory"><span class="nav-index">02</span> Inventario</button>
+				<button class="nav-link" type="button" data-view="replenishment"><span class="nav-index">03</span> Reposición IA <span id="nav-alert-count" class="nav-count">0</span></button>
+				<button class="nav-link" type="button" data-view="reports"><span class="nav-index">04</span> Reportes</button>
+				<button id="admin-nav-link" class="nav-link" type="button" data-view="users" hidden><span class="nav-index">05</span> Usuarios</button>
+			</nav>
+			<div class="sidebar-bottom">
+				<div class="sidebar-version">INVGEST IA <span>v1.0.0</span></div>
+			</div>
+		</aside>
+
+		<section class="main-area">
+			<header class="topbar">
+				<div class="breadcrumb"><span>INVGEST IA</span><span class="crumb-slash">/</span><strong id="topbar-section">Panel general</strong></div>
+				<div class="topbar-right"><span class="today-label" id="today-label"></span><span class="topbar-divider"></span><div class="user-chip"><span class="avatar" id="user-avatar">A</span><span><b id="user-name">Administrador</b><small id="user-role">ADMINISTRADOR</small></span></div><button id="ai-settings-button" class="ai-settings-button" type="button" aria-label="Configurar Gemini" title="Configurar Gemini" aria-pressed="false">IA</button><button id="logout-button" class="icon-button" type="button" aria-label="Cerrar sesión" title="Cerrar sesión">↗</button></div>
+			</header>
+
+			<main class="content-area">
+				<section id="view-dashboard" class="view is-visible" aria-labelledby="dashboard-heading">
+					  <div class="page-heading"><div><p id="dashboard-date" class="eyebrow"></p><h1 id="dashboard-heading">Panel general<span class="heading-period">.</span></h1><p class="page-subtitle">Una lectura clara de lo que sucede en tu inventario.</p></div><button type="button" class="button button-quiet" data-goto="reports">Ver actividad <span aria-hidden="true">↗</span></button></div>
+					<div id="metrics-grid" class="metrics-grid"></div>
+					<div class="dashboard-grid">
+						<section class="panel demand-panel"><div class="panel-heading"><div><p class="eyebrow">MOVIMIENTO</p><h2>Productos con más rotación</h2></div><span class="panel-note">Promedio diario</span></div><div id="rotation-chart" class="rotation-chart"></div></section>
+						<section class="panel alert-panel"><div class="panel-heading"><div><p class="eyebrow">ATENCIÓN REQUERIDA</p><h2>Stock por revisar</h2></div><span id="critical-count" class="number-badge">0</span></div><div id="critical-list" class="critical-list"></div><button class="text-action" type="button" data-goto="inventory">Ir al inventario <span aria-hidden="true">→</span></button></section>
+					</div>
+					<section class="panel recent-panel"><div class="panel-heading"><div><p class="eyebrow">ÚLTIMOS MOVIMIENTOS</p><h2>Actividad reciente</h2></div><button class="text-action" type="button" data-goto="reports">Ver historial <span aria-hidden="true">→</span></button></div><div id="recent-transactions" class="table-wrap"></div></section>
+				</section>
+
+				<section id="view-inventory" class="view" aria-labelledby="inventory-heading">
+					<div class="page-heading"><div><p class="eyebrow">CATÁLOGO Y EXISTENCIAS</p><h1 id="inventory-heading">Inventario<span class="heading-period">.</span></h1><p class="page-subtitle">Consulta existencias, costos y niveles de alerta.</p></div><button id="add-product-button" class="button button-primary" type="button"><span aria-hidden="true">＋</span> Nuevo producto</button></div>
+					<div id="product-form-wrap" class="panel product-form-wrap" hidden>
+						<div class="panel-heading"><div><p class="eyebrow">FICHA DE PRODUCTO</p><h2 id="product-form-title">Agregar producto</h2></div><button id="close-product-form" class="icon-button close-button" type="button" aria-label="Cerrar formulario">×</button></div>
+						<form id="product-form" class="product-form">
+							<input id="product-id" type="hidden">
+							<label>Nombre del producto<input id="product-name" maxlength="80" required placeholder="Ej. Café molido 500 g"></label>
+							<label>Categoría<input id="product-category" maxlength="40" required placeholder="Ej. Abarrotes"></label>
+							<label>Stock actual<input id="product-stock" type="number" min="0" step="1" required></label>
+							<label>Stock mínimo<input id="product-minimum" type="number" min="0" step="1" required></label>
+							<label>Costo unitario<input id="product-cost" type="number" min="0.01" step="0.01" required></label>
+							<label>Proveedor<select id="product-supplier" required></select></label>
+							<div class="form-actions"><p id="product-form-error" class="form-error" role="alert" hidden></p><button class="button button-primary" type="submit">Guardar producto</button></div>
+						</form>
+					</div>
+					<section class="panel inventory-panel">
+						<div class="inventory-toolbar"><div class="search-field"><span aria-hidden="true">⌕</span><input id="inventory-search" type="search" placeholder="Buscar producto..." aria-label="Buscar producto"></div><div class="filter-group"><label class="sr-only" for="category-filter">Filtrar por categoría</label><select id="category-filter"><option value="">Todas las categorías</option></select><label class="sr-only" for="stock-filter">Filtrar por nivel de stock</label><select id="stock-filter"><option value="">Todos los niveles</option><option value="critical">Stock crítico</option><option value="low">Por debajo del mínimo</option><option value="healthy">Stock saludable</option></select></div><span class="result-count" id="inventory-count"></span></div>
+						<div id="inventory-table" class="table-wrap"></div>
+					</section>
+					<section id="supplier-management" class="panel management-panel" hidden>
+						<div class="panel-heading"><div><p class="eyebrow">DIRECTORIO DE COMPRAS</p><h2>Proveedores</h2></div><span id="supplier-count" class="panel-note"></span></div>
+						<form id="supplier-form" class="management-form">
+							<label>Nombre del proveedor<input id="supplier-name" maxlength="80" required placeholder="Ej. Distribuidora del Centro"></label>
+							<label>Plazo de entrega<input id="supplier-lead-time" type="number" min="1" max="365" step="1" required value="3"></label>
+							<div class="management-form-action"><p id="supplier-form-error" class="form-error" role="alert" hidden></p><button class="button button-primary" type="submit">Agregar proveedor</button></div>
+						</form>
+						<div id="suppliers-table" class="table-wrap"></div>
+					</section>
+				</section>
+
+				<section id="view-users" class="view" aria-labelledby="users-heading">
+					<div class="page-heading"><div><p class="eyebrow">ACCESO Y RESPONSABILIDADES</p><h1 id="users-heading">Gestión de usuarios<span class="heading-period">.</span></h1><p class="page-subtitle">Crea cuentas, asigna roles y controla el acceso al sistema.</p></div><span id="user-count" class="panel-note"></span></div>
+					<section id="user-management" class="panel management-panel">
+						<form id="user-form" class="management-form user-create-form">
+							<label>Nombre completo<input id="account-name" maxlength="80" required placeholder="Nombre y apellido"></label>
+							<label>Usuario<input id="account-username" maxlength="32" required placeholder="usuario"></label>
+							<label>Contraseña inicial<input id="account-password" type="password" minlength="6" required placeholder="Mínimo 6 caracteres"></label>
+							<label>Rol<select id="account-role" required><option value="Dependiente">Dependiente</option><option value="Delegado">Delegado</option><option value="Administrador">Administrador</option></select></label>
+							<div class="management-form-action"><p id="user-form-error" class="form-error" role="alert" hidden></p><button class="button button-primary" type="submit">Crear usuario</button></div>
+						</form>
+						<div id="users-table" class="table-wrap"></div>
+					</section>
+				</section>
+
+				<section id="view-replenishment" class="view" aria-labelledby="replenishment-heading">
+					<div class="page-heading"><div><p class="eyebrow">PLANIFICACIÓN DE COMPRAS</p><h1 id="replenishment-heading">Reposición inteligente<span class="heading-period">.</span></h1><p class="page-subtitle">Propuestas calculadas con existencias, rotación y tiempo de entrega.</p></div><span class="ai-status"><span class="live-dot"></span><span id="ai-engine-status">CÁLCULO LOCAL</span></span></div>
+					<div class="ai-intro"><div class="ai-symbol">IA</div><div><p class="eyebrow">AGENTE DE REPOSICIÓN</p><p id="ai-summary">Analizando niveles de inventario...</p></div><span id="analysis-time" class="analysis-time"></span></div>
+					<div id="recommendation-list" class="recommendation-list"></div>
+					<section class="panel methodology"><div><p class="eyebrow">CRITERIO DE ANÁLISIS</p><h2>Demanda + tiempo de entrega</h2></div><p>El mínimo sugerido considera el plazo del proveedor y un resguardo desde 5 unidades. Con una clave configurada, Gemini evalúa demanda reciente, existencias y entregas; sin conexión se conserva el cálculo local.</p></section>
+				</section>
+
+				<section id="view-reports" class="view" aria-labelledby="reports-heading">
+					<div class="page-heading"><div><p class="eyebrow">TRAZABILIDAD DE OPERACIÓN</p><h1>Reportes e historial<span class="heading-period">.</span></h1><p class="page-subtitle">Movimientos de inventario y compras aprobadas.</p></div><button id="export-button" class="button button-quiet" type="button"><span aria-hidden="true">↓</span> Exportar CSV</button></div>
+					<section class="panel report-panel"><form id="report-filters" class="report-toolbar"><label>Desde<input id="report-from" type="date"></label><label>Hasta<input id="report-to" type="date"></label><label>Movimiento<select id="transaction-filter"><option value="">Todos los movimientos</option><option value="Venta">Ventas</option><option value="Entrada">Entradas</option><option value="Salida">Salidas</option><option value="Actualización">Actualizaciones</option><option value="Solicitud de reposición">Solicitudes de reposición</option><option value="Pedido aprobado">Pedidos aprobados</option></select></label><button class="button button-secondary" type="submit">Aplicar filtros</button><button id="clear-report-filters" class="text-action" type="button">Limpiar</button></form><div class="report-summary"><span id="report-result-count">0 movimientos</span><span id="report-period-label">Historial completo</span></div><div id="reports-table" class="table-wrap"></div></section>
+				</section>
+			</main>
+			<footer class="app-footer"><span>INVGEST IA <span class="footer-dot">·</span> INVENTARIO CON REPOSICIÓN INTELIGENTE</span><span>Persistencia local activada</span></footer>
+		</section>
+	</div>
+	<dialog id="gemini-settings-dialog" class="gemini-dialog" aria-labelledby="gemini-settings-title">
+		<div class="gemini-dialog-content">
+			<div class="panel-heading"><div><p class="eyebrow">ANÁLISIS DE REPOSICIÓN</p><h2 id="gemini-settings-title">Configurar Gemini</h2></div><button id="close-gemini-settings" class="icon-button" type="button" aria-label="Cerrar configuración">×</button></div>
+			<label>Clave API de Gemini<input id="gemini-api-key" type="password" autocomplete="off" spellcheck="false" placeholder="Pega tu clave para esta sesión"></label>
+			<label>Modelo<select id="gemini-model" required><option value="gemini-2.5-flash">gemini-2.5-flash · predeterminado</option></select></label>
+			<button id="load-gemini-models" class="button button-secondary" type="button">Cargar modelos disponibles</button>
+			<p id="gemini-config-status" class="gemini-config-status" role="status">La clave solo se mantiene en memoria hasta cerrar sesión.</p>
+			<div class="gemini-dialog-actions"><button id="clear-gemini-key" class="button button-secondary" type="button">Quitar clave</button><button id="save-gemini-settings" class="button button-primary" type="button">Guardar y analizar</button></div>
+		</div>
+	</dialog>
+	<div id="toast-region" class="toast-region" aria-live="polite" aria-atomic="true"></div>
+</body>
+</html>
